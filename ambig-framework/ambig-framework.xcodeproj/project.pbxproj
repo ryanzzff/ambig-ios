@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D18EF522687700B006D51DC /* HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18EF512687700B006D51DC /* HelloWorldTests.swift */; };
+		2D18EF542687701B006D51DC /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18EF532687701B006D51DC /* HelloWorld.swift */; };
 		2DF701D626876D1400F1F021 /* ambig_framework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2DF701D526876D1400F1F021 /* ambig_framework.docc */; };
 		2DF701DC26876D1400F1F021 /* ambig_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF701D126876D1400F1F021 /* ambig_framework.framework */; };
 		2DF701E126876D1400F1F021 /* ambig_frameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF701E026876D1400F1F021 /* ambig_frameworkTests.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D18EF512687700B006D51DC /* HelloWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldTests.swift; sourceTree = "<group>"; };
+		2D18EF532687701B006D51DC /* HelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
 		2DF701D126876D1400F1F021 /* ambig_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ambig_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF701D426876D1400F1F021 /* ambig_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ambig_framework.h; sourceTree = "<group>"; };
 		2DF701D526876D1400F1F021 /* ambig_framework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ambig_framework.docc; sourceTree = "<group>"; };
@@ -50,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D18EF5026876FE1006D51DC /* Hello World */ = {
+			isa = PBXGroup;
+			children = (
+				2D18EF532687701B006D51DC /* HelloWorld.swift */,
+			);
+			path = "Hello World";
+			sourceTree = "<group>";
+		};
 		2DF701C726876D1400F1F021 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +83,7 @@
 		2DF701D326876D1400F1F021 /* ambig-framework */ = {
 			isa = PBXGroup;
 			children = (
+				2D18EF5026876FE1006D51DC /* Hello World */,
 				2DF701D426876D1400F1F021 /* ambig_framework.h */,
 				2DF701D526876D1400F1F021 /* ambig_framework.docc */,
 			);
@@ -81,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				2DF701E026876D1400F1F021 /* ambig_frameworkTests.swift */,
+				2D18EF512687700B006D51DC /* HelloWorldTests.swift */,
 			);
 			path = "ambig-frameworkTests";
 			sourceTree = "<group>";
@@ -195,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF701D626876D1400F1F021 /* ambig_framework.docc in Sources */,
+				2D18EF542687701B006D51DC /* HelloWorld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF701E126876D1400F1F021 /* ambig_frameworkTests.swift in Sources */,
+				2D18EF522687700B006D51DC /* HelloWorldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +365,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleExecutable = ambig_framework;
+				INFOPLIST_KEY_CFBundleName = ambig_framework;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -357,7 +377,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanzzff.ambig-framework";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -377,7 +397,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleExecutable = ambig_framework;
+				INFOPLIST_KEY_CFBundleName = ambig_framework;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -385,7 +409,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryanzzff.ambig-framework";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -397,6 +421,7 @@
 		2DF701E926876D1400F1F021 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -418,6 +443,7 @@
 		2DF701EA26876D1400F1F021 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
