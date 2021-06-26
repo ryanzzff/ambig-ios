@@ -1,4 +1,7 @@
 # Ambig
+
+![](https://github.com/ryanzzff/ambig-swiftui/actions/workflows/CI.yml/badge.svg)
+
 An SwiftUI app with ambiguous usage/purpose.
 
 # Why
