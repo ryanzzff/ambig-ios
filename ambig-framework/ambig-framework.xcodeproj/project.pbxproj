@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D18EF522687700B006D51DC /* HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18EF512687700B006D51DC /* HelloWorldTests.swift */; };
 		2D18EF542687701B006D51DC /* HelloWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18EF532687701B006D51DC /* HelloWorld.swift */; };
+		2D2A8856268D99EC0027010E /* CaesarCipherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2A8855268D99EC0027010E /* CaesarCipherTests.swift */; };
 		2DF701D626876D1400F1F021 /* ambig_framework.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2DF701D526876D1400F1F021 /* ambig_framework.docc */; };
 		2DF701DC26876D1400F1F021 /* ambig_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DF701D126876D1400F1F021 /* ambig_framework.framework */; };
 		2DF701E126876D1400F1F021 /* ambig_frameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF701E026876D1400F1F021 /* ambig_frameworkTests.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		2D18EF512687700B006D51DC /* HelloWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldTests.swift; sourceTree = "<group>"; };
 		2D18EF532687701B006D51DC /* HelloWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorld.swift; sourceTree = "<group>"; };
+		2D2A8855268D99EC0027010E /* CaesarCipherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaesarCipherTests.swift; sourceTree = "<group>"; };
 		2DF701D126876D1400F1F021 /* ambig_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ambig_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF701D426876D1400F1F021 /* ambig_framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ambig_framework.h; sourceTree = "<group>"; };
 		2DF701D526876D1400F1F021 /* ambig_framework.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ambig_framework.docc; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				2DF701E026876D1400F1F021 /* ambig_frameworkTests.swift */,
 				2D18EF512687700B006D51DC /* HelloWorldTests.swift */,
+				2D2A8855268D99EC0027010E /* CaesarCipherTests.swift */,
 			);
 			path = "ambig-frameworkTests";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF701E126876D1400F1F021 /* ambig_frameworkTests.swift in Sources */,
+				2D2A8856268D99EC0027010E /* CaesarCipherTests.swift in Sources */,
 				2D18EF522687700B006D51DC /* HelloWorldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
