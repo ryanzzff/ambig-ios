@@ -10,31 +10,17 @@ import XCTest
 struct CaesarCipher {
     
     func encrypt(_ input: String, shift: Int) -> String {
-        var output = ""
-        for char in input {
+        return input.map { char in
             guard char.isASCII, char.isLetter else {
-                output.append(char)
-                continue
+                return String(char)
             }
             
-            let encryptedChar = char.shift(shift)
-            output.append(encryptedChar)
-        }
-        return output
+            return String(char.shift(shift))
+        }.joined()
     }
     
     func decrypt(_ input: String, shift: Int) -> String {
-        var output = ""
-        for char in input {
-            guard char.isASCII, char.isLetter else {
-                output.append(char)
-                continue
-            }
-            
-            let decryptedChar = char.shift(shift * -1)
-            output.append(decryptedChar)
-        }
-        return output
+        return encrypt(input, shift: shift * -1)
     }
     
 }
