@@ -9,7 +9,7 @@ import XCTest
 
 struct CaesarCipher {
     
-    func encrypt(_ input: String, shift: UInt8) -> String {
+    func encrypt(_ input: String, shift: Int) -> String {
         var output = ""
         for char in input {
             guard char.isASCII, char.isLetter else {
@@ -17,13 +17,13 @@ struct CaesarCipher {
                 continue
             }
             
-            let encryptedChar = char.shift(Int(shift))
+            let encryptedChar = char.shift(shift)
             output.append(encryptedChar)
         }
         return output
     }
     
-    func decrypt(_ input: String, shift: UInt8) -> String {
+    func decrypt(_ input: String, shift: Int) -> String {
         var output = ""
         for char in input {
             guard char.isASCII, char.isLetter else {
@@ -31,7 +31,7 @@ struct CaesarCipher {
                 continue
             }
             
-            let decryptedChar = char.shift(Int(shift) * -1)
+            let decryptedChar = char.shift(shift * -1)
             output.append(decryptedChar)
         }
         return output
