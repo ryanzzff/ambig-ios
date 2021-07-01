@@ -16,8 +16,10 @@ struct CaesarCipher {
                 output.append(char)
                 continue
             }
-            
-            let encryptedChar = Character(UnicodeScalar(asciiValue + shift))
+            let firstLetter = char.isUppercase ? Character("A") : Character("a")
+            let firstLetterAscii = firstLetter.asciiValue!
+            let shiftedAscii = ((asciiValue + shift) - firstLetterAscii) % 26 + firstLetterAscii
+            let encryptedChar = Character(UnicodeScalar(shiftedAscii))
             output.append(encryptedChar)
         }
         return output
@@ -49,6 +51,13 @@ class CaesarCipherTests: XCTestCase {
         
         let actual = sut.encrypt("A", shift: 1)
         XCTAssertEqual("B", actual)
+    }
+    
+    func testEncrypt_overflow_success() {
+        let sut = makeSUT()
+        
+        let actual = sut.encrypt("Z", shift: 1)
+        XCTAssertEqual("A", actual)
     }
     
     func testEncrypt_specialChars_ignore() {
