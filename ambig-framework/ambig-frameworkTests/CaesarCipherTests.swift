@@ -80,6 +80,20 @@ class CaesarCipherTests: XCTestCase {
         XCTAssertEqual("a", actual)
     }
     
+//    func testEncrypt_prevCycle_noShift() {
+//        let sut = makeSUT()
+//
+//        let actual = sut.encrypt("a", shift: -26)
+//        XCTAssertEqual("a", actual)
+//    }
+    
+    func testEncrypt_nextCycle_noShift() {
+        let sut = makeSUT()
+        
+        let actual = sut.encrypt("a", shift: 26)
+        XCTAssertEqual("a", actual)
+    }
+    
     func testEncrypt_lowercase_success() {
         let sut = makeSUT()
         
@@ -94,7 +108,14 @@ class CaesarCipherTests: XCTestCase {
         XCTAssertEqual("B", actual)
     }
     
-    func testEncrypt_overflow_success() {
+    func testEncrypt_lowerCaseOverflow_success() {
+        let sut = makeSUT()
+        
+        let actual = sut.encrypt("z", shift: 1)
+        XCTAssertEqual("a", actual)
+    }
+    
+    func testEncrypt_upperCaseOverflow_success() {
         let sut = makeSUT()
         
         let actual = sut.encrypt("Z", shift: 1)
@@ -117,6 +138,20 @@ class CaesarCipherTests: XCTestCase {
         XCTAssertEqual("a", actual)
     }
     
+    func testDecrypt_prevCycle_noShift() {
+        let sut = makeSUT()
+        
+        let actual = sut.decrypt("a", shift: -26)
+        XCTAssertEqual("a", actual)
+    }
+    
+//    func testDecrypt_nextCycle_noShift() {
+//        let sut = makeSUT()
+//        
+//        let actual = sut.decrypt("a", shift: 26)
+//        XCTAssertEqual("a", actual)
+//    }
+    
     func testDecrypt_lowercase_success() {
         let sut = makeSUT()
 
@@ -130,8 +165,15 @@ class CaesarCipherTests: XCTestCase {
         let actual = sut.decrypt("B", shift: 1)
         XCTAssertEqual("A", actual)
     }
+    
+    func testDecrypt_lowerCaseOverflow_success() {
+        let sut = makeSUT()
 
-    func testDecrypt_overflow_success() {
+        let actual = sut.decrypt("a", shift: 1)
+        XCTAssertEqual("z", actual)
+    }
+
+    func testDecrypt_upperCaseOverflow_success() {
         let sut = makeSUT()
 
         let actual = sut.decrypt("A", shift: 1)
