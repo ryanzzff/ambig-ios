@@ -71,6 +71,15 @@ class CaesarCipherTests: XCTestCase {
         let actual = sut.encrypt(expected, shift: 5)
         XCTAssertEqual(expected, actual)
     }
+    
+    func testEncrypt() throws {
+        let sut = makeSUT()
+        
+        let expected = "QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD"
+        let actual = sut.encrypt("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG", shift: 23)
+        
+        XCTAssertEqual(expected, actual)
+    }
 
     // MARK: - Decryption
     func testDecrypt_shiftCycle_noShift() {
@@ -129,4 +138,12 @@ class CaesarCipherTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    func testDecrypt() throws {
+        let sut = makeSUT()
+        
+        let expected = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"
+        let actual = sut.decrypt("QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD", shift: 23)
+        
+        XCTAssertEqual(expected, actual)
+    }
 }
