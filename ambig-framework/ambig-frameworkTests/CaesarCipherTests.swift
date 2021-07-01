@@ -55,10 +55,10 @@ private extension Character {
     
     private func normalize(value: Int, range: ClosedRange<Int>) -> Int {
         if value < range.lowerBound {
-            let adjustment = (((range.lowerBound - value) / 26) + 1) * 26
+            let adjustment = (((range.lowerBound - value - 1) / 26) + 1) * 26
             return value + adjustment
         } else if value > range.upperBound {
-            let adjustment = (((value - range.upperBound) / 26) + 1) * 26
+            let adjustment = (((value - range.upperBound - 1) / 26) + 1) * 26
             return value - adjustment
         }
         return value
@@ -73,25 +73,24 @@ class CaesarCipherTests: XCTestCase {
     
     // MARK: - Encryption
     
-    func testEncrypt_noShift_success() {
+    func testEncrypt_shiftCycle_noShift() {
         let sut = makeSUT()
+
+        let expected = "aAzZ"
+        var actual = sut.encrypt(expected, shift: -52)
+        XCTAssertEqual(expected, actual)
         
-        let actual = sut.encrypt("a", shift: 0)
-        XCTAssertEqual("a", actual)
-    }
-    
-//    func testEncrypt_prevCycle_noShift() {
-//        let sut = makeSUT()
-//
-//        let actual = sut.encrypt("a", shift: -26)
-//        XCTAssertEqual("a", actual)
-//    }
-    
-    func testEncrypt_nextCycle_noShift() {
-        let sut = makeSUT()
+        actual = sut.encrypt(expected, shift: -26)
+        XCTAssertEqual(expected, actual)
         
-        let actual = sut.encrypt("a", shift: 26)
-        XCTAssertEqual("a", actual)
+        actual = sut.encrypt(expected, shift: 0)
+        XCTAssertEqual(expected, actual)
+        
+        actual = sut.encrypt(expected, shift: 26)
+        XCTAssertEqual(expected, actual)
+        
+        actual = sut.encrypt(expected, shift: 52)
+        XCTAssertEqual(expected, actual)
     }
     
     func testEncrypt_lowercase_success() {
@@ -131,26 +130,25 @@ class CaesarCipherTests: XCTestCase {
     }
 
     // MARK: - Decryption
-    func testDecrypt_noShift_success() {
+    func testDecrypt_shiftCycle_noShift() {
         let sut = makeSUT()
+
+        let expected = "aAzZ"
+        var actual = sut.decrypt(expected, shift: -52)
+        XCTAssertEqual(expected, actual)
         
-        let actual = sut.decrypt("a", shift: 0)
-        XCTAssertEqual("a", actual)
-    }
-    
-    func testDecrypt_prevCycle_noShift() {
-        let sut = makeSUT()
+        actual = sut.decrypt(expected, shift: -26)
+        XCTAssertEqual(expected, actual)
         
-        let actual = sut.decrypt("a", shift: -26)
-        XCTAssertEqual("a", actual)
+        actual = sut.decrypt(expected, shift: 0)
+        XCTAssertEqual(expected, actual)
+        
+        actual = sut.decrypt(expected, shift: 26)
+        XCTAssertEqual(expected, actual)
+        
+        actual = sut.decrypt(expected, shift: 52)
+        XCTAssertEqual(expected, actual)
     }
-    
-//    func testDecrypt_nextCycle_noShift() {
-//        let sut = makeSUT()
-//        
-//        let actual = sut.decrypt("a", shift: 26)
-//        XCTAssertEqual("a", actual)
-//    }
     
     func testDecrypt_lowercase_success() {
         let sut = makeSUT()
