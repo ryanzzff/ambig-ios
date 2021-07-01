@@ -12,14 +12,12 @@ struct CaesarCipher {
     func encrypt(_ input: String, shift: UInt8) -> String {
         var output = ""
         for char in input {
-            guard char.isASCII, char.isLetter, let asciiValue = char.asciiValue else {
+            guard char.isASCII, char.isLetter else {
                 output.append(char)
                 continue
             }
-            let firstLetter = char.isUppercase ? Character("A") : Character("a")
-            let firstLetterAscii = firstLetter.asciiValue!
-            let shiftedAscii = ((asciiValue + shift) - firstLetterAscii) % 26 + firstLetterAscii
-            let encryptedChar = Character(UnicodeScalar(shiftedAscii))
+            
+            let encryptedChar = char.shift(Int(shift))
             output.append(encryptedChar)
         }
         return output
@@ -28,18 +26,42 @@ struct CaesarCipher {
     func decrypt(_ input: String, shift: UInt8) -> String {
         var output = ""
         for char in input {
-            guard char.isASCII, char.isLetter, let asciiValue = char.asciiValue else {
+            guard char.isASCII, char.isLetter else {
                 output.append(char)
                 continue
             }
-            let firstLetter = char.isUppercase ? Character("A") : Character("a")
-            let firstLetterAscii = firstLetter.asciiValue!
-            let adjustment: UInt8 = (asciiValue - shift) < firstLetterAscii ? 26 : 0
-            let shiftedAscii = ((asciiValue - shift) + adjustment - firstLetterAscii) % 26 + firstLetterAscii
-            let encryptedChar = Character(UnicodeScalar(shiftedAscii))
-            output.append(encryptedChar)
+            
+            let decryptedChar = char.shift(Int(shift) * -1)
+            output.append(decryptedChar)
         }
         return output
+    }
+    
+}
+
+private extension Character {
+    func shift(_ shift: Int) -> Character {
+        let lowerRange = self.isUppercase ? 65 : 97
+        let upperRange = self.isUppercase ? 90 : 122
+        
+        guard let ascii = self.asciiValue else { return self }
+        let shifted = Int(ascii) + shift
+        if let scalar = UnicodeScalar(normalize(value: shifted, range: lowerRange...upperRange)) {
+            return Character(scalar)
+        }
+        
+        return self
+    }
+    
+    private func normalize(value: Int, range: ClosedRange<Int>) -> Int {
+        if value < range.lowerBound {
+            let adjustment = (((range.lowerBound - value) / 26) + 1) * 26
+            return value + adjustment
+        } else if value > range.upperBound {
+            let adjustment = (((value - range.upperBound) / 26) + 1) * 26
+            return value - adjustment
+        }
+        return value
     }
 }
 
