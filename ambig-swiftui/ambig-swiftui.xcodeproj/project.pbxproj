@@ -34,6 +34,20 @@
 			remoteGlobalIDString = 2DDF13B82741205B000AAA48;
 			remoteInfo = "ambig-swiftui (macOS)";
 		};
+		2DDF13ED27412092000AAA48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2DF701D126876D1400F1F021;
+			remoteInfo = "ambig-framework";
+		};
+		2DDF13EF27412092000AAA48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2DF701DB26876D1400F1F021;
+			remoteInfo = "ambig-frameworkTests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +63,7 @@
 		2DDF13CC2741205C000AAA48 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DDF13D02741205C000AAA48 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2DDF13D22741205C000AAA48 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ambig-framework.xcodeproj"; path = "../../ambig-framework/ambig-framework.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +152,18 @@
 			children = (
 				2DDF13D02741205C000AAA48 /* Tests_macOS.swift */,
 				2DDF13D22741205C000AAA48 /* Tests_macOSLaunchTests.swift */,
+				2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		2DDF13E927412092000AAA48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DDF13EE27412092000AAA48 /* ambig_framework.framework */,
+				2DDF13F027412092000AAA48 /* ambig-frameworkTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +276,12 @@
 			mainGroup = 2DDF13A627412058000AAA48;
 			productRefGroup = 2DDF13B42741205B000AAA48 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2DDF13E927412092000AAA48 /* Products */;
+					ProjectRef = 2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2DDF13B22741205B000AAA48 /* ambig-swiftui (iOS) */,
@@ -260,6 +291,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2DDF13EE27412092000AAA48 /* ambig_framework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ambig_framework.framework;
+			remoteRef = 2DDF13ED27412092000AAA48 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2DDF13F027412092000AAA48 /* ambig-frameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "ambig-frameworkTests.xctest";
+			remoteRef = 2DDF13EF27412092000AAA48 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2DDF13B12741205B000AAA48 /* Resources */ = {

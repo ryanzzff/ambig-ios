@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ambig-swiftui/Tests macOS/../../ambig-framework/ambig-framework.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ambig-swiftui/ambig-swiftui.xcodeproj">
    </FileRef>
 </Workspace>
