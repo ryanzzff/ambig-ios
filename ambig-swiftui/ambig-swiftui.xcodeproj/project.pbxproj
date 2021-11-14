@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0E64A227412AB30075161E /* ambig_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0E64A127412AB30075161E /* ambig_framework.framework */; };
+		2D0E64A327412AB30075161E /* ambig_framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0E64A127412AB30075161E /* ambig_framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2D0E64A527412ABC0075161E /* ambig_framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0E64A127412AB30075161E /* ambig_framework.framework */; };
+		2D0E64A627412ABC0075161E /* ambig_framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0E64A127412AB30075161E /* ambig_framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DDF13C52741205B000AAA48 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF13C42741205B000AAA48 /* Tests_iOS.swift */; };
 		2DDF13C72741205B000AAA48 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF13C62741205B000AAA48 /* Tests_iOSLaunchTests.swift */; };
 		2DDF13D12741205C000AAA48 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDF13D02741205C000AAA48 /* Tests_macOS.swift */; };
@@ -34,23 +38,35 @@
 			remoteGlobalIDString = 2DDF13B82741205B000AAA48;
 			remoteInfo = "ambig-swiftui (macOS)";
 		};
-		2DDF13ED27412092000AAA48 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2DF701D126876D1400F1F021;
-			remoteInfo = "ambig-framework";
-		};
-		2DDF13EF27412092000AAA48 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2DF701DB26876D1400F1F021;
-			remoteInfo = "ambig-frameworkTests";
-		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2D0E64A427412AB30075161E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2D0E64A327412AB30075161E /* ambig_framework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D0E64A727412ABD0075161E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2D0E64A627412ABC0075161E /* ambig_framework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2D0E64A127412AB30075161E /* ambig_framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ambig_framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DDF13AC27412058000AAA48 /* ambig_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ambig_swiftuiApp.swift; sourceTree = "<group>"; };
 		2DDF13AD27412058000AAA48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2DDF13AE2741205B000AAA48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +79,6 @@
 		2DDF13CC2741205C000AAA48 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DDF13D02741205C000AAA48 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		2DDF13D22741205C000AAA48 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "ambig-framework.xcodeproj"; path = "../../ambig-framework/ambig-framework.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0E64A527412ABC0075161E /* ambig_framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0E64A227412AB30075161E /* ambig_framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D0E64A027412AB30075161E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D0E64A127412AB30075161E /* ambig_framework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2DDF13A627412058000AAA48 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +131,7 @@
 				2DDF13C32741205B000AAA48 /* Tests iOS */,
 				2DDF13CF2741205C000AAA48 /* Tests macOS */,
 				2DDF13B42741205B000AAA48 /* Products */,
+				2D0E64A027412AB30075161E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,18 +178,8 @@
 			children = (
 				2DDF13D02741205C000AAA48 /* Tests_macOS.swift */,
 				2DDF13D22741205C000AAA48 /* Tests_macOSLaunchTests.swift */,
-				2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */,
 			);
 			path = "Tests macOS";
-			sourceTree = "<group>";
-		};
-		2DDF13E927412092000AAA48 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2DDF13EE27412092000AAA48 /* ambig_framework.framework */,
-				2DDF13F027412092000AAA48 /* ambig-frameworkTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +192,7 @@
 				2DDF13AF2741205B000AAA48 /* Sources */,
 				2DDF13B02741205B000AAA48 /* Frameworks */,
 				2DDF13B12741205B000AAA48 /* Resources */,
+				2D0E64A727412ABD0075161E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +210,7 @@
 				2DDF13B52741205B000AAA48 /* Sources */,
 				2DDF13B62741205B000AAA48 /* Frameworks */,
 				2DDF13B72741205B000AAA48 /* Resources */,
+				2D0E64A427412AB30075161E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,12 +294,6 @@
 			mainGroup = 2DDF13A627412058000AAA48;
 			productRefGroup = 2DDF13B42741205B000AAA48 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 2DDF13E927412092000AAA48 /* Products */;
-					ProjectRef = 2DDF13E827412092000AAA48 /* ambig-framework.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				2DDF13B22741205B000AAA48 /* ambig-swiftui (iOS) */,
@@ -291,23 +303,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		2DDF13EE27412092000AAA48 /* ambig_framework.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ambig_framework.framework;
-			remoteRef = 2DDF13ED27412092000AAA48 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2DDF13F027412092000AAA48 /* ambig-frameworkTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ambig-frameworkTests.xctest";
-			remoteRef = 2DDF13EF27412092000AAA48 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2DDF13B12741205B000AAA48 /* Resources */ = {

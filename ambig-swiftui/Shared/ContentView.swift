@@ -7,15 +7,17 @@
 
 import SwiftUI
 import Combine
+import ambig_framework
 
 class ViewModel: ObservableObject {
     @Published var input: String = ""
-    @Published var inputLength: Int = 0
+    @Published var shift: String = ""
+    @Published var cipherText: String = ""
     
     init() {
-        $input
-            .map { $0.count }
-            .assign(to: &$inputLength)
+        Publishers.CombineLatest($input, $shift)
+            .map { CaesarCipher().encrypt($0, shift: Int($1) ?? 1) }
+            .assign(to: &$cipherText)
     }
 }
 
@@ -25,7 +27,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TextField("Enter some text", text: $model.input)
-            Text("Input String Length: \(model.inputLength)")
+            TextField("Shift", text: $model.shift)
+            Text("Caesar shifted cipher text: \(model.cipherText)")
         }
         .padding()
     }
